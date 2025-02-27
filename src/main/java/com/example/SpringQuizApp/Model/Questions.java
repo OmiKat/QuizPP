@@ -8,9 +8,9 @@ import jakarta.persistence.Id;
 @Entity
 public class Questions {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int slno;
-    private String question_field;
+    private String category;
     private String question;
     private String option1;
     private String option2;
@@ -69,12 +69,12 @@ public class Questions {
         this.question = question;
     }
 
-    public String getQuestion_field() {
-        return question_field;
+    public String getCategory() {
+        return category;
     }
 
-    public void setQuestion_field(String question_field) {
-        this.question_field = question_field;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public int getSlno() {
@@ -85,9 +85,9 @@ public class Questions {
         this.slno = slno;
     }
 
-    public Questions(int slno , String question_field, String question, String option1, String option2, String option3, String option4 , String correct_ans) {
+    public Questions(int slno , String category, String question, String option1, String option2, String option3, String option4 , String correct_ans) {
         this.slno = slno;
-        this.question_field = question_field;
+        this.category = category;
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;

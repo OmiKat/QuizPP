@@ -16,4 +16,13 @@ public class QuestionService {
     public List<Questions> getallquestions() {
         return repo.findAll();
     }
+
+    public List<Questions> getquestionByCategory(String category) {
+        return repo.findBycategory(category);
+    }
+
+    public String addQuestion(Questions question) {
+        repo.saveAndFlush(question);
+        return "SUCCESS";
+    }
 }
