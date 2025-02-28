@@ -25,4 +25,14 @@ public class QuestionService {
         repo.saveAndFlush(question);
         return "SUCCESS";
     }
+
+    public String deleteQue(int id) {
+        repo.deleteById(id);
+        return "DELETED";
+    }
+
+    public String updateQue(Questions questions) {
+        repo.save(questions);
+        return "UPDATED";
+    }
 }

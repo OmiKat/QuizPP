@@ -30,5 +30,15 @@ public class QuestionController {
 
     }
 
+    @DeleteMapping("del/{id}")
+    public String deleteQuestion(@PathVariable int id){
+        return service.deleteQue(id);
+    }
+
+    @PutMapping("update")
+    public String updateQuestion(@RequestBody Questions questions){
+        return service.updateQue(questions);
+    }
+
 
 }
