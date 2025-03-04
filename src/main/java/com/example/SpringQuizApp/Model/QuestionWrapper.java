@@ -1,36 +1,15 @@
 package com.example.SpringQuizApp.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import org.springframework.stereotype.Component;
 
-
 @Component
-@Entity
-public class Questions {
-    @Id
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+public class QuestionWrapper  {
     private int slno;
     private String question;
     private String option1;
     private String option2;
     private String option3;
     private String option4;
-    private String category;
-    private String correct_ans;
-
-    public Questions() {
-    }
-
-    public String getCorrect_ans() {
-        return correct_ans;
-    }
-
-    public void setCorrect_ans(String correct_ans) {
-        this.correct_ans = correct_ans;
-    }
 
     public String getOption1() {
         return option1;
@@ -72,14 +51,6 @@ public class Questions {
         this.question = question;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     public int getSlno() {
         return slno;
     }
@@ -88,17 +59,27 @@ public class Questions {
         this.slno = slno;
     }
 
-    public Questions(int slno , String category, String question, String option1, String option2, String option3, String option4 , String correct_ans) {
-        this.slno = slno;
-        this.category = category;
-        this.question = question;
+    public QuestionWrapper() {
+    }
+
+    public QuestionWrapper(String option1, String option2, String option3, String option4, String question, int slno) {
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
-        this.correct_ans = correct_ans;
+        this.question = question;
+        this.slno = slno;
+    }
 
-
-
+    @Override
+    public String toString() {
+        return "QuestionWrapper{" +
+                "option1='" + option1 + '\'' +
+                ", slno=" + slno +
+                ", question='" + question + '\'' +
+                ", option2='" + option2 + '\'' +
+                ", option3='" + option3 + '\'' +
+                ", option4='" + option4 + '\'' +
+                '}';
     }
 }
